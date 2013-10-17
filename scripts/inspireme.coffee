@@ -35,6 +35,4 @@ inspiration = [
 
 module.exports = (robot) ->
   robot.hear /inspire me/i, (msg) ->
-  	msg.send "Oh yeah!"
-
-#  	msg.send msg.random inspiration
+  	msg.send msg.random inspiration
