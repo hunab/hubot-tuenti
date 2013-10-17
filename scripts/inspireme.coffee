@@ -29,7 +29,7 @@ inspiration = [
   "si liveview no te funciona… es deadview?",
   "Sergio Machin, hermano de Micro",
   "Estoy en Cibeles no conduzcas",
-  "El rojo es el mal",
+  "El rojo es el mal"
 ]
 
 
