@@ -25,6 +25,7 @@
   "Likes en comments"
 ]
 
+
 module.exports = (robot) ->
-  robot.respond /inspire me/i, (msg) ->
-  	msg.reply msg.random phrases
+  robot.hear /inspire me/i, (msg) ->
+  	msg.send msg.random phrases
