@@ -7,8 +7,8 @@
 # Author:
 #   marcio
 
-# pending words: madafaca, sida cancerígeno, gran emil, retraso, kukukaka, facebook (competencia), tuenti, twitter (color)
-# riki, escontrela, omg, pixa|pisha|quillo, necesito? vacaciones, sexo, ola k ase, sexy
+# pending words: madafaca, sida cancerígeno, emil, retraso, facebook (competencia), tuenti, twitter (color)
+# riki, escontrela, omg, pixa|pisha|quillo, necesito? vacaciones, sexo, ola k ase
 # nigga, hijo de puta, hijo de fruta, zaryn, zero limites, "pon orden"
 
 barcelona = [
@@ -113,7 +113,7 @@ module.exports = (robot) ->
   robot.hear /\b(boom)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/1d0Q1s3G373w0w0y3e3F/IMG_20130421_140647.jpg"
 
-  robot.hear /\b(whisky|brugal|puro)\b/i, (msg) ->
+  robot.hear /\b(whisky|brugal|puro|velasco)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/vufaynvzqje4bo2/brugal.jpg"
 
   robot.hear /\b(buda)\b/i, (msg) ->
