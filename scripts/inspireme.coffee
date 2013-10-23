@@ -26,5 +26,5 @@ inspiration = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /inspire me/i, (msg) ->
+  robot.hear /\b(inspire me|inspira(me|nos))\b/i, (msg) ->
   	msg.send msg.random inspiration

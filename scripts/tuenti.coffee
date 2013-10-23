@@ -7,7 +7,9 @@
 # Author:
 #   marcio
 
-# pending words: madafaca, sida cancerígeno, gran emil, retraso
+# pending words: madafaca, sida cancerígeno, gran emil, retraso, kukukaka, facebook (competencia), tuenti, twitter (color)
+# riki, escontrela, omg, pixa|pisha|quillo, necesito? vacaciones, sexo, ola k ase, sexy
+# nigga, hijo de puta, hijo de fruta, zaryn, zero limites, "pon orden"
 
 barcelona = [
   "http://dl.dropboxusercontent.com/s/uani6vqve5h7337/barcelona.jpg",
@@ -41,7 +43,55 @@ lol = [
   "http://dl.dropboxusercontent.com/s/rerhv8xgeci8o2a/lol8.gif"
 ]
 
+oleg = [
+  "http://dl.dropboxusercontent.com/s/ucb2dlygfxgjjcz/oleg.jpeg",
+  "http://dl.dropboxusercontent.com/s/comdbg0na3wd6kv/oleg2.jpeg",
+  "http://dl.dropboxusercontent.com/s/wsmc9hd6e0cl0jj/oleg3.jpeg",
+  "http://dl.dropboxusercontent.com/s/b4r9v4x9g65ms2s/oleg4.jpeg",
+  "http://dl.dropboxusercontent.com/s/d8u7x3og89hg898/oleg5.jpeg",
+  "http://dl.dropboxusercontent.com/s/ivdyea63287q7v0/oleg6.jpeg",
+  "http://dl.dropboxusercontent.com/s/ze897rvo5ugvr8n/oleg7.jpeg",
+  "http://dl.dropboxusercontent.com/s/y6sx3r0mfefwmy8/oleg8.jpeg",
+  "http://dl.dropboxusercontent.com/s/y7cljm5l5npsvq1/oleg9.jpeg",
+  "http://dl.dropboxusercontent.com/s/qy22vl9g5k25zpb/oleg10.jpeg",
+  "http://dl.dropboxusercontent.com/s/m0is189yoe9rv93/oleg11.jpeg",
+  "http://dl.dropboxusercontent.com/s/0r7bqb09szcdwrg/oleg12.jpeg",
+  "http://dl.dropboxusercontent.com/s/ksod5mhvwhlbezf/oleg13.jpeg",
+  "http://dl.dropboxusercontent.com/s/vn9tl5bhkmpmais/oleg14.jpeg",
+  "http://dl.dropboxusercontent.com/s/ke1boqhcrhfws85/oleg15.jpeg",
+  "http://dl.dropboxusercontent.com/s/ql8uhe76phc2ami/oleg16.jpeg",
+  "http://dl.dropboxusercontent.com/s/qwuf7clizvjrpdb/oleg17.jpeg",
+  "http://dl.dropboxusercontent.com/s/822w8bd11y34eim/oleg18.jpeg",
+  "http://dl.dropboxusercontent.com/s/tmo4ncxo3gi66qk/oleg19.jpeg",
+  "http://dl.dropboxusercontent.com/s/yj7r6ksx8gozh7s/oleg20.jpeg",
+  "http://dl.dropboxusercontent.com/s/nv91knikrujuq5c/oleg21.jpeg",
+  "http://dl.dropboxusercontent.com/s/ucm4aj8eu0rvurj/oleg22.jpeg",
+  "http://dl.dropboxusercontent.com/s/qtcfco0ea1jgv7x/oleg23.jpeg",
+  "http://dl.dropboxusercontent.com/s/emxo89jvoh3grce/oleg24.jpeg",
+  "http://dl.dropboxusercontent.com/s/m5wa0090k36croa/oleg25.jpeg",
+  "http://dl.dropboxusercontent.com/s/nquuaxgqtfxl9nu/oleg26.jpeg",
+  "http://dl.dropboxusercontent.com/s/mn97pq6xy2bblzw/oleg27.jpeg",
+  "http://dl.dropboxusercontent.com/s/2myv3g47vlrwuwk/oleg28.jpeg",
+  "http://dl.dropboxusercontent.com/s/33vgb7qn9y59tb1/oleg29.jpeg",
+  "http://dl.dropboxusercontent.com/s/m0bglfnwf8el4wh/oleg30.jpeg"
+]
+
+sexy = [
+  "http://dl.dropboxusercontent.com/s/mntxkwfzg9cxuac/sexy.jpeg",
+  "http://dl.dropboxusercontent.com/s/fd0zksyiw3a530o/sexy2.jpeg",
+  "http://dl.dropboxusercontent.com/s/93mkjj3atm3o1oo/sexy3.jpeg"
+]
+
 module.exports = (robot) ->
+  # Respond
+  robot.respond /(tweets)( of )?(.*)/i, (msg) ->
+    topic = msg.match[3]
+    if topic.length == 0
+      msg.send "Pero pon algo pa buscar palangana!"
+    else
+      msg.send "https://twitter.com/search?q="+escape(topic)+"&src=typd"
+
+  # Hear
   robot.hear /\b(adriansito)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/f1wqqupt2k3szxz/adriansito.jpg"
 
@@ -63,7 +113,7 @@ module.exports = (robot) ->
   robot.hear /\b(boom)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/1d0Q1s3G373w0w0y3e3F/IMG_20130421_140647.jpg"
 
-  robot.hear /\b(whicky|brugal|puro)\b/i, (msg) ->
+  robot.hear /\b(whisky|brugal|puro)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/vufaynvzqje4bo2/brugal.jpg"
 
   robot.hear /\b(buda)\b/i, (msg) ->
@@ -74,6 +124,9 @@ module.exports = (robot) ->
 
   robot.hear /\b(cejjutti)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/0Z372y1o0A2M472a0J3k/Cejjuti_2.gif"
+
+  robot.hear /\b(challenge accepted)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/3up2fafdt0c3lfc/challenge-acepted.gif"
 
   robot.hear /\b(ciclope)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/w9l9ofuotov5j00/ciclope.jpg"
@@ -133,11 +186,17 @@ module.exports = (robot) ->
   robot.hear /\b(iglesia|bendi(ce|ces|go))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/my9zezr6w18ps7g/iglesia.jpg"
 
-  robot.hear /\b(intimo)\b/i, (msg) ->
+  robot.hear /\b(intim(o|os|a|as))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/uxtrjnq35dz5742/intimo.jpeg"
 
   robot.hear /\b(just(yna)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/mubnum0a1kqzs0y/just.jpg"
+
+  robot.hear /\b(kikillo)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/p6dwj5u0rvf6wky/kikillo.png"
+
+  robot.hear /\b(kukukaka|kike)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/w29jwvktu9lrqvr/kukukaka.jpeg"
 
   robot.hear /\b(ladron(es)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/9qy6xp2als5l1az/ladrones.jpg"
@@ -148,8 +207,11 @@ module.exports = (robot) ->
   robot.hear /\b(llueve|est(a|á) lloviendo)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/fbk1qbmy5i9qfy7/llueve.jpg"
 
-  robot.hear /\b(l(o)+l)\b/i, (msg) ->
+  robot.hear /\b(l(o+)l)\b/i, (msg) ->
     msg.send msg.random lol
+
+  robot.hear /\b(lunes)\b/i, (msg) ->
+     msg.send "http://dl.dropboxusercontent.com/s/vhoziq6641y5iph/lunes.gif" 
 
   robot.hear /\b(mandanga)\b/i, (msg) ->
      msg.send "http://cl.ly/S5lQ/mandanga.png" 
@@ -157,11 +219,14 @@ module.exports = (robot) ->
   robot.hear /\b(marcio)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/2T3Q340X0t0v2V1w3Y0a/marcio-salto.jpg" 
 
-  robot.hear /\b(morritos)\b/i, (msg) ->
+  robot.hear /\b(morritos|duckface)\b/i, (msg) ->
     msg.send "http://cl.ly/S5sh/adriansito.png"
 
   robot.hear /\b(modern(os|as))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/hqc18hme3cg0rp0/modernos.jpg"
+
+  robot.hear /\b(me gusta(n)?|mola(n|ndo|s)?)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/3nqztonkpthbrrq/mola.jpeg"
 
   robot.hear /\b(moto(s)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/1vmdqj22phit8ol/motos.jpeg"
@@ -169,7 +234,7 @@ module.exports = (robot) ->
   robot.hear /\b(noo(o)+)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/qcbo4bko94fkx2m/nooo.gif"
 
-  robot.hear /nuevo tuenti/i, (msg) ->
+  robot.hear /\b(nuevo tuenti)\b/i, (msg) ->
     msg.send "Veamos qué dicen de nosotros..."
     msg.send "https://twitter.com/search?q=nuevo%20tuenti&src=typd"
 
@@ -179,8 +244,15 @@ module.exports = (robot) ->
   robot.hear /\b((o)+l(e)+)\b/i, (msg) ->
     msg.send "http://cl.ly/S5zX/silvia-sevillanas.png"
 
+  robot.hear /\b(oleg)\b/i, (msg) ->
+    msg.send "null"
+    msg.send msg.random oleg
+
   robot.hear /\b(ostia(s)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/cfw5npftdpw3suf/ostia.jpeg"
+
+  robot.hear /\b(papi)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/vjd1e5q72y7hvac/papi.jpeg"
 
   robot.hear /\b(pechotes|boobs|tetazas)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/7navl9aspr96gnt/pechotes.gif"
@@ -191,11 +263,17 @@ module.exports = (robot) ->
   robot.hear /\b(poder|goku|dragon ball|energía)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/u7d0ec0jn66cuq4/poder.jpeg"
 
+  robot.hear /\b(pop|band(a?)|musica)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/yqou70yownk5w2/pop.jpeg"
+
   robot.hear /\b(relax)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/iuz7nb1593lqn3m/relax.jpg"
 
   robot.hear /\b(salto)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/efy2em3j2pgsvh5/salto.jpg"
+
+  robot.hear /\b(sexy(s?)|sesi|morbo|sensual)\b/i, (msg) ->
+    msg.send msg.random sexy
 
   robot.hear /\b(spotify)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/0zph8s5lbmuogmh/spotify.jpeg"
@@ -206,7 +284,7 @@ module.exports = (robot) ->
   robot.hear /\b(workspace)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/47x4otvlrrfqith/workspace.jpg"
 
-  robot.hear /\b(wt(f)+)\b/i, (msg) ->
+  robot.hear /\b(wt(f+))\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/0z2j2C2Z3G0s183K1v11/WTF-Ju.gif"  
 
   robot.hear /\b(xing)\b/i, (msg) ->
@@ -215,5 +293,5 @@ module.exports = (robot) ->
   robot.hear /\b(yonkis|borrachos)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/ecizx79bb4rtwfp/yonkis.jpeg"
 
-  robot.hear /\b(z(a)+s|z(a)+sca)\b/i, (msg) ->
+  robot.hear /\b(z(a+)s|z(a+)sc(a+))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/tlpjyxr78zb0y84/goaway3x.gif"
