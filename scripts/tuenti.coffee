@@ -7,9 +7,9 @@
 # Author:
 #   marcio
 
-# pending words: madafaca, sida cancerígeno, emil, retraso, facebook (competencia), tuenti, twitter (color)
+# pending words: madafaca, sida cancerígeno, emil, fer, retraso, facebook (competencia), line, tuenti, twitter (color)
 # riki, escontrela, omg, pixa|pisha|quillo, necesito? vacaciones, sexo, ola k ase
-# nigga, hijo de puta, hijo de fruta, zaryn, zero limites, "pon orden"
+# nigga, hijo de puta, hijo de fruta, zaryn, phil, zero limites, "pon orden", standup
 
 barcelona = [
   "http://dl.dropboxusercontent.com/s/uani6vqve5h7337/barcelona.jpg",
@@ -86,10 +86,38 @@ module.exports = (robot) ->
   # Respond
   robot.respond /(tweets)( of )?(.*)/i, (msg) ->
     topic = msg.match[3]
+
     if topic.length == 0
       msg.send "Pero pon algo pa buscar palangana!"
     else
       msg.send "https://twitter.com/search?q="+escape(topic)+"&src=typd"
+
+  robot.respond /(recu(e|é)rdame)(.*)/i, (msg) ->
+    topic = msg.match[3].replace /^\s+|\s+$/g, ""
+
+    if topic.length == 0
+      msg.send "¿No me estrás vacilando no? ¬¬"
+
+    else if /c(o|ó)mo validar SASS/i.test(topic)
+      msg.send "sass -c --load-path static/layout/cupcake/css/sass-helpers/ main/core/lib_external/yui/tuenti/t-cupcake-bootstrap-base-css/css/bootstrap.scss"
+
+    else if /(todas)?las templates de video/i.test(topic)
+      response  = "main/localized/interfaces/web2/templates/cupcake/RichMediaExtracted/RichMediaVideo.phtml"
+      response += "main/localized/interfaces/web2/templates/cupcake/MultiItemSearch/VideoBrowseItem.phtml\n"
+      response += "main/sites/tuenti.com/templates/Video/VideoStripVideos.phtml\n"
+      response += "main/sites/tuenti.com/templates/Video/ShareVideo.phtml\n"
+      response += "main/localized/interfaces/web2/templates/cupcake/RichMediaForWalls/RichMediaVideo.phtml\n"
+      response += "main/localized/interfaces/web2/templates/cupcake/RichMediaExtractedForBlogs/RichMediaVideo.phtml\n"
+      response += "main/localized/interfaces/web2/templates/cupcake/RichMediaForPages/RichMediaSponsorVideo.phtml\n"
+      response += "main/localized/interfaces/web2/templates/cupcake/RichMediaForPages/RichMediaVideo.phtml\n"
+
+      msg.send response
+
+    else if /qui(e|é)n manda/i.test(topic)
+      msg.send "Zaryn"
+
+    else 
+      msg.send "No entiendo ná!"
 
   # Hear
   robot.hear /\b(adriansito)\b/i, (msg) ->
@@ -113,7 +141,7 @@ module.exports = (robot) ->
   robot.hear /\b(boom)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/1d0Q1s3G373w0w0y3e3F/IMG_20130421_140647.jpg"
 
-  robot.hear /\b(whisky|brugal|puro|velasco)\b/i, (msg) ->
+  robot.hear /\b(whisky|brugal|puro|velasco|alex)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/vufaynvzqje4bo2/brugal.jpg"
 
   robot.hear /\b(buda)\b/i, (msg) ->
@@ -125,7 +153,7 @@ module.exports = (robot) ->
   robot.hear /\b(cejjutti)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/0Z372y1o0A2M472a0J3k/Cejjuti_2.gif"
 
-  robot.hear /\b(challenge accepted)\b/i, (msg) ->
+  robot.hear /\b(challenge accepted|acepto)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/3up2fafdt0c3lfc/challenge-acepted.gif"
 
   robot.hear /\b(ciclope)\b/i, (msg) ->
@@ -201,7 +229,7 @@ module.exports = (robot) ->
   robot.hear /\b(ladron(es)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/9qy6xp2als5l1az/ladrones.jpg"
 
-  robot.hear /\b(late)\b/i, (msg) ->
+  robot.hear /\b(late|tard(o|ó)n|tarde)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/0b1g3V2l2w3r3q2B2w2Q/The%2BMan_s.jpg"
 
   robot.hear /\b(llueve|est(a|á) lloviendo)\b/i, (msg) ->
@@ -249,6 +277,7 @@ module.exports = (robot) ->
     msg.send msg.random oleg
 
   robot.hear /\b(ostia(s)?)\b/i, (msg) ->
+    msg.send "No quiero violencia, ni palabrotas."
     msg.send "http://dl.dropboxusercontent.com/s/cfw5npftdpw3suf/ostia.jpeg"
 
   robot.hear /\b(papi)\b/i, (msg) ->
