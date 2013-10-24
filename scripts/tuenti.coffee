@@ -73,13 +73,42 @@ oleg = [
   "http://dl.dropboxusercontent.com/s/mn97pq6xy2bblzw/oleg27.jpeg",
   "http://dl.dropboxusercontent.com/s/2myv3g47vlrwuwk/oleg28.jpeg",
   "http://dl.dropboxusercontent.com/s/33vgb7qn9y59tb1/oleg29.jpeg",
-  "http://dl.dropboxusercontent.com/s/m0bglfnwf8el4wh/oleg30.jpeg"
+  "http://dl.dropboxusercontent.com/s/m0bglfnwf8el4wh/oleg30.jpeg",
+  "http://dl.dropboxusercontent.com/s/wb8sgp9obzifuem/oleg31.jpeg"
 ]
 
 sexy = [
   "http://dl.dropboxusercontent.com/s/mntxkwfzg9cxuac/sexy.jpeg",
   "http://dl.dropboxusercontent.com/s/fd0zksyiw3a530o/sexy2.jpeg",
   "http://dl.dropboxusercontent.com/s/93mkjj3atm3o1oo/sexy3.jpeg"
+]
+
+mota = [
+  "http://dl.dropboxusercontent.com/s/wtwh16btctyhw8z/mota.jpeg",
+  "http://dl.dropboxusercontent.com/s/vmmhilnwfl0i5ie/mota2.jpeg",
+  "http://dl.dropboxusercontent.com/s/hstk7pm2g1aq4q1/mota3.jpeg",
+  "http://dl.dropboxusercontent.com/s/lrgl1lgmgnj6v5w/mota4.jpeg",
+  "http://dl.dropboxusercontent.com/s/azypjki99mhz8y0/mota5.jpeg",
+  "http://dl.dropboxusercontent.com/s/e42601jpaaoptfw/mota6.jpeg",
+  "http://dl.dropboxusercontent.com/s/nur9qj3ls48ug8z/mota7.jpeg",
+  "http://dl.dropboxusercontent.com/s/4njc2j4hkqyst2y/mota8.jpeg"
+]
+
+zaryn = [
+  "http://dl.dropboxusercontent.com/s/3opelq4svu23jzi/zaryn.jpeg",
+  "http://dl.dropboxusercontent.com/s/chyg0fa5xnmqxwq/zaryn2.jpeg",
+  "http://dl.dropboxusercontent.com/s/0hi3fw9bgnl3c45/zaryn3.jpeg",
+  "http://dl.dropboxusercontent.com/s/d02rln4tb0fhigs/zaryn4.jpeg",
+  "http://dl.dropboxusercontent.com/s/4xtuz4m8evz87tz/zaryn5.jpeg",
+  "http://dl.dropboxusercontent.com/s/8q3nrug39r42wnp/zaryn6.jpeg",
+  "http://dl.dropboxusercontent.com/s/dfp3clq7areohps/zaryn7.jpeg",
+  "http://dl.dropboxusercontent.com/s/lnxl8cfx5d4bv4d/zaryn8.jpeg",
+  "http://dl.dropboxusercontent.com/s/93f2pr6356radul/zaryn9.jpeg",
+  "http://dl.dropboxusercontent.com/s/k0rhrxc3kvdzynt/zaryn10.jpeg",
+  "http://dl.dropboxusercontent.com/s/b384g4xsq3yt53o/zaryn11.jpeg",
+  "http://dl.dropboxusercontent.com/s/lw4tvfe6dxukdef/zaryn12.jpeg",
+  "http://dl.dropboxusercontent.com/s/n1p7byoqk6x9nsy/zaryn13.jpeg",
+  "http://dl.dropboxusercontent.com/s/csmpvchu9krontp/zaryn14.jpeg"
 ]
 
 module.exports = (robot) ->
@@ -101,7 +130,7 @@ module.exports = (robot) ->
     else if /c(o|ó)mo validar SASS/i.test(topic)
       msg.send "sass -c --load-path static/layout/cupcake/css/sass-helpers/ main/core/lib_external/yui/tuenti/t-cupcake-bootstrap-base-css/css/bootstrap.scss"
 
-    else if /(todas)?las templates de video/i.test(topic)
+    else if /(todas)?las(.*) templates de video/i.test(topic)
       response  = "main/localized/interfaces/web2/templates/cupcake/RichMediaExtracted/RichMediaVideo.phtml"
       response += "main/localized/interfaces/web2/templates/cupcake/MultiItemSearch/VideoBrowseItem.phtml\n"
       response += "main/sites/tuenti.com/templates/Video/VideoStripVideos.phtml\n"
@@ -114,7 +143,7 @@ module.exports = (robot) ->
       msg.send response
 
     else if /qui(e|é)n manda/i.test(topic)
-      msg.send "Zaryn"
+      msg.send msg.random zaryn
 
     else 
       msg.send "No entiendo ná!"
@@ -187,8 +216,11 @@ module.exports = (robot) ->
   robot.hear /\b(disco|portada de disco)\b/i, (msg) ->
    msg.send "http://dl.dropboxusercontent.com/s/npg9lk9712pg8ld/disco.jpg"
 
-  robot.hear /\b((downate(l)+o))\b/i, (msg) ->
+  robot.hear /\b(downate(l)+o)\b/i, (msg) ->
     msg.send "http://cl.ly/S5fr/downatello.jpg"
+
+  robot.hear /\b(fer)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/eh479i7ig9bv4nr/fer2.jpeg"
 
   robot.hear /\b(ferrari)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/1j6nmfa5us22551/ferrari.jpg"
@@ -247,6 +279,9 @@ module.exports = (robot) ->
   robot.hear /\b(marcio)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/2T3Q340X0t0v2V1w3Y0a/marcio-salto.jpg" 
 
+  #robot.hear /\b(mj)\b/i, (msg) ->
+  #  msg.send "" 
+
   robot.hear /\b(morritos|duckface)\b/i, (msg) ->
     msg.send "http://cl.ly/S5sh/adriansito.png"
 
@@ -256,6 +291,9 @@ module.exports = (robot) ->
   robot.hear /\b(me gusta(n)?|mola(n|ndo|s)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/3nqztonkpthbrrq/mola.jpeg"
 
+  robot.hear /\b(mota|dani)\b/i, (msg) ->
+    msg.send msg.random mota
+
   robot.hear /\b(moto(s)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/1vmdqj22phit8ol/motos.jpeg"
 
@@ -263,8 +301,9 @@ module.exports = (robot) ->
     msg.send "http://dl.dropboxusercontent.com/s/qcbo4bko94fkx2m/nooo.gif"
 
   robot.hear /\b(nuevo tuenti)\b/i, (msg) ->
-    msg.send "Veamos qué dicen de nosotros..."
-    msg.send "https://twitter.com/search?q=nuevo%20tuenti&src=typd"
+    msg.send "http://dl.dropboxusercontent.com/s/owsiru7q7va8fh6/nuevotuenti.jpeg"
+    #msg.send "Veamos qué dicen de nosotros..."
+    #msg.send "https://twitter.com/search?q=nuevo%20tuenti&src=typd"
 
   robot.hear /\b(offsite)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/l3oka33cm4appeg/offsite.jpg"
@@ -321,6 +360,9 @@ module.exports = (robot) ->
 
   robot.hear /\b(yonkis|borrachos)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/ecizx79bb4rtwfp/yonkis.jpeg"
+
+  #robot.hear /\b(zaryn)\b/i, (msg) ->
+  #  msg.send msg.random zaryn
 
   robot.hear /\b(z(a+)s|z(a+)sc(a+))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/tlpjyxr78zb0y84/goaway3x.gif"
