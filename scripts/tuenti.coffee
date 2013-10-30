@@ -435,7 +435,7 @@ module.exports = (robot) ->
   robot.hear /\b(fies(h)*t(a|on)|festival)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/dx5vrfkkhd37c8h/fieshta.jpeg"
 
-  robot.hear /\b(fuck!*$)\b/i, (msg) ->
+  robot.hear /\b(fuck+!*$)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/1tt20p33gaujb4j/fuck.gif"
 
   robot.hear /\b(fuck yeah)\b/i, (msg) ->
@@ -674,7 +674,7 @@ module.exports = (robot) ->
   robot.hear /\b(workspace)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/47x4otvlrrfqith/workspace.jpg"
 
-  robot.hear /\b(wo*w*|gua*u*)\b/i, (msg) ->
+  robot.hear /\b(wo+w+|gua+u+)\b/i, (msg) ->
     msg.send msg.random wow
 
   robot.hear /\b(wt(f+))\b/i, (msg) ->
