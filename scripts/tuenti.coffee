@@ -608,7 +608,7 @@ module.exports = (robot) ->
   robot.hear /\b(pibon(es)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/j268hkamrq7gb9o/pibon.jpeg"
 
-  robot.hear /\b(piscina(s?)|nada(r?)\b/i, (msg) ->
+  robot.hear /\b(piscina(s?)|nada(r?))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/hp1p94zavzi8idm/nadar.png"
 
   robot.hear /\b(poder|goku|dragon ball)\b/i, (msg) ->
