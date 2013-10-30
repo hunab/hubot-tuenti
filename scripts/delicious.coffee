@@ -56,7 +56,7 @@ module.exports = (robot) ->
       if err?
         msg.reply "I have a vague memory of hearing about that link sometime in the past."
       else
-        msg.reply "I've stuck that link into my robot brain." 
+        msg.reply "He guardado este link en mi super memoria." 
         
   robot.respond /link me for (.+)/i, (msg) ->
     description = msg.match[1]
@@ -73,7 +73,7 @@ module.exports = (robot) ->
     
     link.list (err, message) ->
       if err?   
-        msg.reply "Links? What links? I don't remember any links."       
+        msg.reply "Links? qué links? No me consta ¬¬"
       else
         msg.reply message
 
@@ -100,7 +100,7 @@ class Url
 
   add: (url, callback) ->
     if url in @all()
-      callback "Url already exists"
+      callback "La url ya existe"
     else
       @all url
       callback null, "Url added"
@@ -134,20 +134,20 @@ class Link
         if entry.url is bookmark.url
           result.push bookmark
     if result.length > 0
-      callback "Bookmark already exists"
+      callback "El bookmark ya existe"
     else
       @all bookmark
-      callback null, "Bookmark added"    
+      callback null, "Bookmark añadido"    
 
   list: (callback) ->
     if @all().length > 0
-      resp_str = "These are the links I'm remembering:\n\n"
+      resp_str = "Estos son los links que estoy recordando:\n\n"
       for bookmark in @all()
         if bookmark
           resp_str += bookmark.description + " (" + bookmark.url + ")\n"
       callback null, resp_str    
     else
-      callback "No bookmarks exist"
+      callback "No exite bookmarks"
 
   find: (description, callback) ->
     result = []
@@ -158,7 +158,7 @@ class Link
     if result.length > 0
       callback null, result[0]
     else
-      callback "No results found"
+      callback "No he encontrado nada"
 
 class Delicious
   constructor: (msg, user, password) ->
@@ -183,9 +183,9 @@ class Delicious
         resultRegexp = /result code="(.+)"/i
         result = data.match(resultRegexp)[1]
         if result == 'done'
-          callback null, "Your bookmark was added to delicious."
+          callback null, "He añadido tu enlace a delicious!"
         else
-          callback "There was a problem adding your bookmark to delicious: #{result}"
+          callback "Ups! ha habido un problema al añadir tu bookmark a delicious: #{result}"
 
   listBookmarks: (callback) ->
     xml2js = require('xml2js')
@@ -194,7 +194,7 @@ class Delicious
       if err? or not data?
         callback err
       else
-        resp_str = "My bookmarks: \n"
+        resp_str = "Mis bookmarks: \n"
         (new xml2js.Parser()).parseString data, (err, json)->
           for post in json.post
             resp_str += post["@"].description + " (" + post["@"].href + ")\n"
@@ -209,4 +209,4 @@ class Delicious
         else if err?
           callback err
         else
-          callback "There were problems contacting delicious"
+          callback "Mierda de delicious, no puedo conectarme con él"
