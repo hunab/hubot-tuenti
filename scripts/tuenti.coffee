@@ -160,7 +160,8 @@ fer = [
 
 fuckyou = [
   "http://dl.dropboxusercontent.com/s/j3p81tu8w880rba/fuckyou.gif",
-  "http://dl.dropboxusercontent.com/s/w1wl4y7qwbyitua/fuckyou2.gif"
+  "http://dl.dropboxusercontent.com/s/w1wl4y7qwbyitua/fuckyou2.gif",
+  "http://dl.dropboxusercontent.com/s/wncq7uhm9pu8cxj/fuckyou3.gif"
 ]
 
 mj = [
@@ -316,7 +317,7 @@ module.exports = (robot) ->
   robot.hear /\b(mamuso(.*)aprend(e|ido|iendo))\b/i, (msg) ->
     msg.send "Ese soy yo! y sí, soy un puto hacha."
 
-  robot.hear /\b(alex)\b/i, (msg) ->
+  robot.hear /\b(alex|velasco)\b/i, (msg) ->
     msg.send msg.random alex
 
   robot.hear /\b(adriansito|macarra|kinki)\b/i, (msg) ->
@@ -324,6 +325,9 @@ module.exports = (robot) ->
 
   robot.hear /\b(amor)\b/i, (msg) ->
     msg.send msg.random amor
+
+  robot.hear /\b(ass(es)?|culo(s?))\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/gy4qpodfr6u9w1x/ass.gif"
 
   robot.hear /\b(azafata)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/0ve5glwalt3d51i/azafata.jpeg"
@@ -349,7 +353,7 @@ module.exports = (robot) ->
   robot.hear /\b(boom)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/1d0Q1s3G373w0w0y3e3F/IMG_20130421_140647.jpg"
 
-  robot.hear /\b(whisky|brugal|puro|velasco|alex)\b/i, (msg) ->
+  robot.hear /\b(whisky|brugal|puro)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/vufaynvzqje4bo2/brugal.jpg"
 
   robot.hear /\b(buda)\b/i, (msg) ->
@@ -398,7 +402,7 @@ module.exports = (robot) ->
     msg.send msg.random crestacio
 
   robot.hear /\b(cuerpacio)\b/i, (msg) ->
-    msg.send "Marcio me acaba de decir que también os echa de menos! ;)"
+    msg.send "Marcio me acaba de decir que también os echa de menos!"
     msg.send msg.random cuerpacio
 
   robot.hear /\b(cura(s)?)\b/i, (msg) ->
@@ -416,7 +420,7 @@ module.exports = (robot) ->
   robot.hear /\b(emil(io)?)\b/i, (msg) ->
     msg.send msg.random emil
 
-  robot.hear /\b(energ(i|í)a)\b/i, (msg) ->
+  robot.hear /\b(chris|energ(i|í)a)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/ye0tm9fxy51ma2l/energia.png"
 
   robot.hear /\b(facebook)\b/i, (msg) ->
@@ -537,6 +541,9 @@ module.exports = (robot) ->
   robot.hear /\b(me (piro|voy))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/x1tmaozcgbwbohy/mepiro.gif"
 
+  robot.hear /\b(mierd(a|er)|shit)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/4tvyf1ffnr71nwp/mierda.gif"
+
   robot.hear /\b(mola(n|ndo|s)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/3nqztonkpthbrrq/mola.jpeg"
 
@@ -576,6 +583,9 @@ module.exports = (robot) ->
     msg.send "null"
     msg.send msg.random oleg
 
+  robot.hear /\b(omg|oh my god)\b/i, (msg) ->
+    msg.send msg.random omg
+
   robot.hear /\b(ostia(s)?)\b/i, (msg) ->
     msg.send "No quiero violencia, ni palabrotas."
     msg.send "http://dl.dropboxusercontent.com/s/cfw5npftdpw3suf/ostia.jpeg"
@@ -586,14 +596,20 @@ module.exports = (robot) ->
   robot.hear /\b(papi)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/vjd1e5q72y7hvac/papi.jpeg"
 
-  robot.hear /\b(pechotes|boobs|teta(zas|men))\b/i, (msg) ->
+  robot.hear /\b(pechotes|boobs|teta(zas|men)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/7navl9aspr96gnt/pechotes.gif"
+
+  robot.hear /\b(pene(s)?)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/mi9pzjjk4z4dyk7/pene.gif"
 
   robot.hear /\b(phil)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/kxgh11gvoc9ntyi/phil.jpeg" 
 
   robot.hear /\b(pibon(es)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/j268hkamrq7gb9o/pibon.jpeg"
+
+  robot.hear /\b(piscina(s?)|nada(r?)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/hp1p94zavzi8idm/nadar.png"
 
   robot.hear /\b(poder|goku|dragon ball)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/u7d0ec0jn66cuq4/poder.jpeg"
@@ -610,14 +626,17 @@ module.exports = (robot) ->
   robot.hear /\b(salto)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/efy2em3j2pgsvh5/salto.jpg"
 
-  robot.hear /\b(sexo)\b/i, (msg) ->
+  robot.hear /\b(sexo?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/811x0tfc1m08n1p/sexo.gif"
 
-  robot.hear /\b(sexy(s?)|sesi|morbo|sensual)\b/i, (msg) ->
+  robot.hear /\b(sex(i|y)(s?)|sesi|morbo|sensual)\b/i, (msg) ->
     msg.send msg.random sexy
 
   robot.hear /\b(silvia)\b/i, (msg) ->
     msg.send msg.random silvia
+
+  robot.hear /\b(skype)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/sqpzxs5pyw5inb9/skype.gif"
 
   robot.hear /\b(spotify)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/0zph8s5lbmuogmh/spotify.jpeg"
@@ -664,7 +683,7 @@ module.exports = (robot) ->
   robot.hear /\b(xing)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/fq5lxx16uf0gr9i/xing.jpg"
 
-  robot.hear /\b(yonkis|borrachos)\b/i, (msg) ->
+  robot.hear /\b(yonki(s?)|borracho(s?))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/ecizx79bb4rtwfp/yonkis.jpeg"
 
   robot.hear /\b(zaryn)\b/i, (msg) ->
