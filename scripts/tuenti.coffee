@@ -239,7 +239,8 @@ cuerpacio = [
   "http://dl.dropboxusercontent.com/s/zp12fr966iz1iwi/cuerpacio5.jpeg",
   "http://dl.dropboxusercontent.com/s/wbkcz575nckit20/cuerpacio6.jpeg",
   "http://dl.dropboxusercontent.com/s/5uvv3hcc9wviqps/cuerpacio7.jpeg",
-  "http://dl.dropboxusercontent.com/s/wit7mgb35wsur2t/cuerpacio8.jpeg"
+  "http://dl.dropboxusercontent.com/s/wit7mgb35wsur2t/cuerpacio8.jpeg",
+  "http://dl.dropboxusercontent.com/s/los8tmboblxmnfv/cuerpacio9.png"
 ]
 
 sergio = [
@@ -446,7 +447,10 @@ module.exports = (robot) ->
 
   robot.hear /\b(fuerteventura)\b/i, (msg) ->
     msg.send msg.random fuerteventura
-    
+  
+  robot.hear /\b(f(u|ú)tbol|caño)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/bvlablmvk6a0dcr/caño.gif"
+
   robot.hear /\b(futbolin)\b/i, (msg) ->
     msg.send "http://cl.ly/S56R/futbolin.jpeg"
 
@@ -467,6 +471,9 @@ module.exports = (robot) ->
 
   robot.hear /\b(grupo|tuenti crew)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/g3gs57qhbof40a2/grupo.jpg"
+
+  robot.hear /\b(hi( )?5|give me (5|five))\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/z4y00qpub5vw9em/hi5.png"
 
   robot.hear /\b(hijo de fruta)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/9326z9bk0wmoxar/hijodefruta.gif"
@@ -549,6 +556,9 @@ module.exports = (robot) ->
 
   robot.hear /\b(mota|dani|pi(x|ch|sh)a|quillo)\b/i, (msg) ->
     msg.send msg.random mota
+
+  robot.hear /\b(motiva(c|t)i(o|ó)n)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/zya8buz1b72bq6i/motivation.gif"
 
   robot.hear /\b(moto(s)?)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/1vmdqj22phit8ol/motos.jpeg"
