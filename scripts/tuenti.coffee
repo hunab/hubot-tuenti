@@ -460,7 +460,7 @@ module.exports = (robot) ->
   robot.hear /\b(futbolin)\b/i, (msg) ->
     msg.send "http://cl.ly/S56R/futbolin.jpeg"
 
-  robot.hear /\b(friday|viernes|juernes)\b/i, (msg) ->
+  robot.hear /\b(friday|viernes|juernes|finde|fin de semana)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/avfjcdp2dc2vz4r/friday.gif"
 
   robot.hear /\b(fr(i|í)o)\b/i, (msg) ->
