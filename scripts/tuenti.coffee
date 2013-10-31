@@ -149,7 +149,9 @@ carmen = [
   "http://dl.dropboxusercontent.com/s/qgsgenbmcj3gqrp/carmen.jpeg",
   "http://dl.dropboxusercontent.com/s/75vh0wsaoelatuz/carmen2.jpeg",
   "http://dl.dropboxusercontent.com/s/gclesbhim3k6o7y/carmen3.jpeg",
-  "http://dl.dropboxusercontent.com/s/z4e1srevje9zfa2/carmen4.jpeg"
+  "http://dl.dropboxusercontent.com/s/z4e1srevje9zfa2/carmen4.jpeg",
+  "http://dl.dropboxusercontent.com/s/59eb2c9tpi5qlue/carmen5.jpeg",
+  "http://dl.dropboxusercontent.com/s/iqyw2nvekxujw7v/carmen6.jpeg"
 ]
 
 fer = [
@@ -221,7 +223,8 @@ kike = [
   "http://dl.dropboxusercontent.com/s/fmwz7eh58sc7tqq/kike5.jpeg",
   "http://dl.dropboxusercontent.com/s/1lyt98ex4t4qenh/kike6.jpeg",
   "http://dl.dropboxusercontent.com/s/36l0i1miv3irioq/kike7.jpeg",
-  "http://dl.dropboxusercontent.com/s/uu2areyl763cb9i/kike8.jpeg"
+  "http://dl.dropboxusercontent.com/s/uu2areyl763cb9i/kike8.jpeg",
+  "http://dl.dropboxusercontent.com/s/u4yuekmkb7411o8/kike9.jpeg"
 ]
 
 marcio = [
@@ -342,6 +345,9 @@ module.exports = (robot) ->
   robot.hear /\b(arte)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/79ldcs81jte3tex/arte.jpg"
 
+  robot.hear /\b(baila(r|mos|ndo))\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/1y3544qa0zo4fel/bailar.gif"
+
   robot.hear /\b(barcelona|barna)\b/i, (msg) ->
     msg.send msg.random barcelona
 
@@ -420,6 +426,9 @@ module.exports = (robot) ->
 
   robot.hear /\b(emil(io)?)\b/i, (msg) ->
     msg.send msg.random emil
+
+  robot.hear /\b(ana|escontrela)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/a3jmk50yt72t8id/escontrela.jpg"
 
   robot.hear /\b(chris|energ(i|í)a)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/ye0tm9fxy51ma2l/energia.png"
@@ -511,7 +520,7 @@ module.exports = (robot) ->
   robot.hear /\b(late|tard(o|ó)n|tarde|renfe|atasco|ulcera|excusa)\b/i, (msg) ->
     msg.send "http://f.cl.ly/items/0b1g3V2l2w3r3q2B2w2Q/The%2BMan_s.jpg"
 
-  robot.hear /\b(sergio|cerrut(t?)i)\b/i, (msg) ->
+  robot.hear /\b(sergio|(p|c)errut(t?)i)\b/i, (msg) ->
     msg.send msg.random sergio
 
   robot.hear /\b(llueve|est(a|á) lloviendo)\b/i, (msg) ->
@@ -627,8 +636,15 @@ module.exports = (robot) ->
   robot.hear /\b(pop|band(a?)|musica)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/yqou70yownk5w2/pop.jpeg"
 
+  robot.hear /\b(raul)\b/i, (msg) ->
+    msg.send "http://dl.dropboxusercontent.com/s/9721avkgp0k881w/raul.png"
+
   robot.hear /\b(relax)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/iuz7nb1593lqn3m/relax.jpg"
+
+  robot.hear /\b(ricard|riki)\b/i, (msg) ->
+    #msg.send "Riki para los amigos."
+    msg.send "http://dl.dropboxusercontent.com/s/w9xnm4s1ci4dsgy/ricard.jpeg"
 
   robot.hear /\b(rom(a|á)ntico)\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/5zz1jxmtv49mgfu/sergio6.jpeg"
@@ -696,7 +712,7 @@ module.exports = (robot) ->
   robot.hear /\b(yonki(s?)|borracho(s?))\b/i, (msg) ->
     msg.send "http://dl.dropboxusercontent.com/s/ecizx79bb4rtwfp/yonkis.jpeg"
 
-  robot.hear /\b(zaryn)\b/i, (msg) ->
+  robot.hear /\b(zaryn|qui(e|é)n manda|jefe|boss)\b/i, (msg) ->
     msg.send msg.random zaryn
 
   robot.hear /\b(z(a+)s|z(a+)sc(a+))\b/i, (msg) ->
