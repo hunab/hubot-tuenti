@@ -4,10 +4,7 @@
 # Author:
 #   marcio
 
-# pending words: madafaca, sida cancerígeno, emil, retraso, facebook (competencia), line, tuenti, twitter (color)
-# riki, escontrela, omg, necesito? vacaciones, sexo, ola k ase
-# nigga, hijo de puta, hijo de fruta, zero limites, "pon orden", standup, be your own ceo, fuck yeah,
-# por fin viernes, juernes, mdd (foto de dani cn el occulus)
+# pending words: madafaca, sida cancerígeno, retraso, zero limites, "pon orden", standup, be your own ceo, por fin viernes, mdd
 
 barcelona = [
   "http://dl.dropboxusercontent.com/s/uani6vqve5h7337/barcelona.jpg",
@@ -32,7 +29,7 @@ emil = [
 susto = [
   "http://dl.dropboxusercontent.com/s/d9prfsy2uwnso7o/susto.gif",
   "http://dl.dropboxusercontent.com/s/vpcbz96967a56hw/susto2.gif",
-  "http://dl.dropboxusercontent.com/s/aurrxqz8f9ivt5/susto3.gif",
+  "http://dl.dropboxusercontent.com/s/saurrxqz8f9ivt5/susto3.gif",
   "http://dl.dropboxusercontent.com/s/m4f3evt4peh3ntd/susto4.gif"
 ]
 
@@ -311,8 +308,8 @@ module.exports = (robot) ->
 
       msg.send response
 
-    else if /qui(e|é)n manda/i.test(topic)
-      msg.send msg.random zaryn
+    #else if /qui(e|é)n manda/i.test(topic)
+    #  msg.send msg.random zaryn
 
     else 
       msg.send "No entiendo ná!"
